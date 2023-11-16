@@ -1,4 +1,4 @@
-@extends('Pages.master')
+@extends('pages.master')
 
 @section('content')
     <main class="py-3 bg-light">
@@ -7,18 +7,17 @@
             <hr>
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-4 mb-3">
-                    <div class="card">
+                    <div class="card text-primary border-primary">
                         <div class="card-body">
-                            <h3>Users</h3>
-                            <p class="text-muted">60</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h3>Products</h3>
-                            <p class="text-muted">60</p>
+                            <div class="row align-items-center">
+                                <div class="col border-end">
+                                    <h3>Products</h3>
+                                    <p class="text-secondary">{{ $product->count() }}</p>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <h1 class="bi bi-box2"></h1>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect(route('login'));
 });
 
 Route::get('login', [UserController::class, 'login'])->name('login');
@@ -27,4 +28,14 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('dashboard', [UserController::class, 'dashboard'])->name('dashboard');
     Route::get('profile', [UserController::class, 'profile'])->name('profile');
     Route::post('delete/{user}', [UserController::class, 'deleteAccount'])->name('delete');
+    Route::put('updateProfile/{user}', [UserController::class, 'updateProfile'])->name('updateProfile');
+
+    //PRODUCT
+    // Route::resource('product', ProductController::class);
+    Route::get('product', [ProductController::class, 'index'])->name('product.index');
+    Route::post('product', [ProductController::class, 'store'])->name('product.store');
+    Route::get('product/create', [ProductController::class, 'create'])->name('product.create');
+    Route::get('product/{product}', [ProductController::class, 'show'])->name('product.show');
+    Route::put('product/{product}', [ProductController::class, 'update'])->name('product.update');
+    Route::delete('product/{product}', [ProductController::class, 'destroy'])->name('product.delete');
 });

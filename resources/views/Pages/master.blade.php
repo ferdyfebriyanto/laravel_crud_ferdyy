@@ -5,8 +5,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Weboender | Laravel Class BootCamp 2023</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <!-- Shortcut Icon -->
+    <link rel="shortcut icon" href="./assets/img/logo.jpg" type="image/x-icon">
+
+    <!-- Styles -->
+    <link href="./assets/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/bootstrap-icons.css">
 
     <style>
         main {
@@ -17,15 +27,19 @@
             position: relative;
             height: 56px;
         }
+
+        .navbar-brand {
+            font-family: 'Pacifico', cursive;
+        }
     </style>
 </head>
 
 <body>
-
     <header>
         <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="./index.html">Weboender</a>
+                <a class="navbar-brand" href="{{ route('dashboard') }}"><img src="{{ asset('assets/img/logo.jpg') }}"
+                        alt="" height="30" class="rounded-circle"> Weboender Store</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -34,18 +48,15 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="./index.html">Dashboard</a>
+                            <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Products</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Users</a>
+                            <a class="nav-link" href="{{ route('product.index') }}">Products</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="btn btn-primary dropdown-toggle" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                {{ session('user')->name }}
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                {{ auth()->user()->name }}
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="{{ route('profile') }}">My Profile</a></li>
@@ -58,21 +69,15 @@
         </nav>
     </header>
 
-    @yield('content')   
+    @yield('content')
 
     <footer class="py-3 bg-dark">
         <p class="text-center text-white">
-            Created with <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red"
-                class="bi bi-heart-fill" viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                    d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
-            </svg> by Weboender Community 2023
+            Created with <i class="bi bi-heart-fill text-danger"></i> by Weboender Community 2023
         </p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-    </script>
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
