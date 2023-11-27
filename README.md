@@ -11,7 +11,7 @@ pass: 112345678
 -   Create Produk
 -   Show Produk
 -   Edit Produk
--   Hapus Produk
+-   Delete Produk
 -   Show akun
 -   Edit akun
 -   Delete akun
