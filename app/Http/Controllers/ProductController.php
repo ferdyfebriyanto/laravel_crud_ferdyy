@@ -57,7 +57,7 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($product)
+    public function edit($product)
     {
         $product = Product::find($product);
 
@@ -67,7 +67,7 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function show(string $id)
     {
         //
     }

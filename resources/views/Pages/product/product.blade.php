@@ -26,6 +26,7 @@
                                     </thead>
                                     <tbody>
                                         @foreach ($data as $product)
+                                            {{-- {{ dd($product) }} --}}
                                             <tr>
                                                 <td>{{ $product->id }}</td>
                                                 <td><img src="{{ asset('storage/images/' . $product->gambar) }}"
@@ -34,7 +35,7 @@
                                                 <td>Rp{{ $product->harga }}</td>
                                                 <td>{{ $product->stok }}</td>
                                                 <td>
-                                                    <a href="{{ route('product.show', ['product' => $product->id]) }}"
+                                                    <a href="{{ route('product.edit', ['product' => $product->id]) }}"
                                                         class="btn btn-sm btn-warning mb-3">Edit</a>
                                                     <form class="d-inline-block delete-product"
                                                         action="{{ route('product.delete', ['product' => $product->id]) }}"
@@ -58,6 +59,9 @@
             </div>
         </div>
     </main>
+
+    {{-- Menambahkan js datatable dari folder asset --}}
+    <script src="{{ asset('assets/js/datatables.min.js') }}"></script>
 
     <script>
         $(document).ready(function() {
