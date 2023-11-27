@@ -2,21 +2,23 @@
 
 ## Fitur
 
-- Login
-- Logout
-- Register
-- Create Produk
-- Show Produk
-- Edit Produk
-- Hapus Produk
-- Show akun
-- Edit akun
-- Delete akun
+-   Login
+-   Logout
+-   Register
+-   Create Produk
+-   Show Produk
+-   Edit Produk
+-   Hapus Produk
+-   Show akun
+-   Edit akun
+-   Delete akun
 
-##Database
+## Database
 
+![SQL](laravel_dependency_injection.sql)
 
 ## Dokumentasi
+
 ![image](https://github.com/ferdyfebriyanto/laravel_crud_ferdyy/assets/47923906/04628858-57b0-4330-8c0b-74d36cd09fe5)
 
 ![image](https://github.com/ferdyfebriyanto/laravel_crud_ferdyy/assets/47923906/dc35864b-7a6c-4681-9db6-f072f19222e1)
