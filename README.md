@@ -1,5 +1,8 @@
 # Laravel CRUD
 
+email: ferdyfebriyanto22@gmail.com
+pass: 112345678
+
 ## Fitur
 
 -   Login
