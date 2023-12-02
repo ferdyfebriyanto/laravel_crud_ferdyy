@@ -24,7 +24,11 @@ class UserController extends Controller
     {
         if (Auth::attempt($request->only(['email', 'password']))) {
             session(['user' => Auth::user()]);
-            return redirect(route('dashboard'));
+            if(Auth::user()->isAdmin == 0) {
+                return view('pages.dashboard');
+            } else {
+                return view('pages.dashboard');
+            }
         } else {
             return redirect(route('login'))->with('failed', 'Email or Password Wrong');
         }

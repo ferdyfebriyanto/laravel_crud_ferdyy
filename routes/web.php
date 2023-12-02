@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,11 +32,20 @@ Route::group(['middleware' => 'admin'], function () {
     Route::put('updateProfile/{user}', [UserController::class, 'updateProfile'])->name('updateProfile');
 
     //PRODUCT
-    // Route::resource('product', ProductController::class);
     Route::get('product', [ProductController::class, 'index'])->name('product.index');
     Route::post('product', [ProductController::class, 'store'])->name('product.store');
     Route::get('product/create', [ProductController::class, 'create'])->name('product.create');
     Route::get('product/{product}', [ProductController::class, 'edit'])->name('product.edit');
     Route::put('product/{product}', [ProductController::class, 'update'])->name('product.update');
     Route::delete('product/{product}', [ProductController::class, 'destroy'])->name('product.delete');
+
+    // CATEGORY
+    Route::get('category', [CategoryController::class, 'index'])->name('category.index');
+    Route::post('category', [CategoryController::class, 'store'])->name('category.store');
+    Route::get('category/create', [CategoryController::class, 'create'])->name('category.create');
+    Route::get('category/{category}', [CategoryController::class, 'edit'])->name('category.edit');
+    Route::put('category/{category}', [CategoryController::class, 'update'])->name('category.update');
+    Route::delete('category/{category}', [CategoryController::class, 'destroy'])->name('category.delete');
+
+
 });
